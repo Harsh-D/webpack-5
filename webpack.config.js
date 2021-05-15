@@ -39,16 +39,20 @@ const webpackConfig = {
   ],
   optimization: {
     splitChunks: {
-        cacheGroups: {
-            node_vendors: {
-                name: "vendor",
-                test: /[\\/]node_modules[\\/]/,
-                chunks: "all",
-                priority: 1
-            }
-        }
-    }
-},
+      cacheGroups: {
+        node_vendors: {
+          name: "vendor",
+          test: /[\\/]node_modules[\\/]/,
+          chunks: "all",
+          priority: 1,
+        },
+      },
+    },
+  },
+  devtool: "inline-source-map",
+  devServer: {
+    contentBase: "./dist",
+  },
   mode: "production",
 };
 
